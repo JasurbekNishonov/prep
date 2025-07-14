@@ -2,11 +2,12 @@ const {Pool} = require('pg')
 
 // setting up user accounts with Pool
 const pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    port: 5173,
-    password: "1234",
-    database: "minibank"
-})
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    ssl: { rejectUnauthorized: false },
+  });
 
 module.exports = pool

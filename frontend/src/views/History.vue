@@ -21,7 +21,7 @@ const tableData = ref([])
 const getHistory = async () => {
   try {
     const token = localStorage.getItem('token')
-    const res = await axios.get(`${import.meta.env.VITE_API_URL}/getTransactions`, {
+    const res = await axios.get('https://prep-backend-u66j.onrender.com/getTransactions', {
       headers: { Authorization: `Bearer ${token}` },
     })
     tableData.value=res.data

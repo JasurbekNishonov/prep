@@ -16,7 +16,7 @@ const user = ref([])
 const getUser = async () => {
     try {
        const token = localStorage.getItem('token')
-       const res = await axios.get(`${import.meta.env.VITE_API_URL}/user`, {
+       const res = await axios.get('https://prep-backend-u66j.onrender.com/user', {
         headers: { Authorization: `Bearer ${token}`}
     })
     user.value = res.data

@@ -128,7 +128,7 @@ const onSubmit = async () => {
   try {
     const valid = await loginFormRef.value.validate()
     if (valid) {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, form.value)
+      const res = await axios.post('https://prep-backend-u66j.onrender.com/auth/login', form.value)
       const token = res.data.token
       const decoded = jwtDecode(token)
       

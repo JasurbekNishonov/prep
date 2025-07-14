@@ -195,7 +195,7 @@ const onSubmit = async () => {
   try {
     const valid = await loginFormRef.value.validate()
     if (valid) {
-      await axios.post('http://localhost:3000/auth/register', form.value)
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, form.value)
       router.push({ name: 'Login' })
     }
   } catch (error) {

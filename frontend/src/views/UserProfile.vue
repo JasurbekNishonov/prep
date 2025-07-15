@@ -16,7 +16,7 @@ const user = ref([])
 const getUser = async () => {
     try {
        const token = localStorage.getItem('token')
-       const res = await axios.get('https://prep-backend-u66j.onrender.com/user', {
+       const res = await axios.get('http://localhost:3000/user', {
         headers: { Authorization: `Bearer ${token}`}
     })
     user.value = res.data

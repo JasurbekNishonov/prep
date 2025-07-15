@@ -52,7 +52,7 @@ const options = [
 const getBalance = async () => {
   try {
     const token = localStorage.getItem('token')
-    const res = await axios.get('https://prep-backend-u66j.onrender.com/user', {
+    const res = await axios.get('http://localhost:3000/user', {
       headers: { Authorization: `Bearer ${token}` },
     })
     user.value = res.data
@@ -65,7 +65,7 @@ const getTransaction = async () => {
   try {
       const token = localStorage.getItem('token')
     if (method.value) {
-      await axios.post('https://prep-backend-u66j.onrender.com/createTransaction',
+      await axios.post('http://localhost:3000/createTransaction',
         {amount: amount.value, type: method.value},
         {headers: { Authorization: `Bearer ${token}`},
       })
